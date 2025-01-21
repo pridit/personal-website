@@ -6,18 +6,18 @@ This repository contains the web application files for my personal website, buil
 
 ### Clone
 
-Make a copy of the repository.
+Make a copy of the repository files:
 
 ```bash
 git clone https://github.com/pridit/personal-website.git
 ```
 
-### Docker
+### Local Development
 
-Bring up the Docker container in detached mode, which also installs the node dependencies.
+Use `npm` to start the development server:
 
 ```bash
-docker-compose up -d
+npm run dev
 ```
 
 ### Ready

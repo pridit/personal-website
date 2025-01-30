@@ -1,9 +1,13 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --color-background: theme(colors.gray.100);
+  --color-background: var(--color-gray-100);
 }
 
 :root.dark {
-  --color-background: theme(colors.neutral.900);
+  --color-background: var(--color-neutral-900);
 }
 
 html {
@@ -22,7 +26,6 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
 }
 
 a:not(.inline-block) {

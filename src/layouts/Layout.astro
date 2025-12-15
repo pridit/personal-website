@@ -52,26 +52,49 @@ const { title } = Astro.props;
         <title>{title}</title>
 
         <script is:inline>
-            if (
-                localStorage.theme === 'dark' ||
-                (!('theme' in localStorage) &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches)
-            ) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
+            function setTheme() {
+                if (
+                    localStorage.theme === 'dark' ||
+                    (!('theme' in localStorage) &&
+                        window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches)
+                ) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
             }
+
+            document.addEventListener('astro:page-load', () => {
+                setTheme();
+            });
+
+            document.addEventListener('astro:after-swap', () => {
+                setTheme();
+            });
+
+            setTheme();
         </script>
     </head>
-    <body
-        class="min-h-screen font-sans leading-normal text-gray-700 dark:text-zinc-300 print:bg-white"
-    >
+    <body class="min-h-screen font-sans leading-normal print:bg-white">
         <slot />
     </body>
-</html>
+    <style is:global>
+        :root {
+            --background-color: var(--color-gray-100);
+            --text-color: var(--color-gray-700);
+            color-scheme: light;
+        }
 
-<style>
-    body {
-        background-color: var(--color-background);
-    }
-</style>
+        :root.dark {
+            --background-color: var(--color-neutral-900);
+            --text-color: var(--color-zinc-300);
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+    </style>
+</html>

@@ -26,6 +26,6 @@
     "@astrojs/ts-plugin": "^1.10.6",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.2",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.2.0"
   }
 }

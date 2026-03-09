@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.56.1",
-    "eslint": "^10.0.2",
+    "eslint": "^10.0.3",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-vue": "^10.8.0",
     "prettier": "3.8.1",

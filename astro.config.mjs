@@ -9,6 +9,10 @@ export default defineConfig({
   site: 'https://www.pridit.co.uk',
   integrations: [sitemap()],
   output: 'static',
+  server: {
+    host: true,
+    port: 4321,
+  },
   vite: {
     plugins: [tailwindcss()],
     server: {

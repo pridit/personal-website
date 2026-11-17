@@ -24,7 +24,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/sitemap": "^3.7.5",
     "@astrojs/ts-plugin": "^1.11.0",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.11",
